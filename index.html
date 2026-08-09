@@ -11,8 +11,8 @@
     --ink:#2a2622; --ink2:#5a544c; --bg:#fdfbf4; --card:#ffffff; --line:#e8e2d4;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,"Segoe UI","Noto Sans",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
-  .wrap { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
+  body { font-family:-apple-system,"Segoe UI","Noto Sans","Noto Sans CJK JP",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+  .wrap { max-width:880px; margin:0 auto; padding:32px 20px 64px; }
   .kicker { font-size:14px; font-weight:700; color:var(--ink2); letter-spacing:.05em; }
   h1 { font-size:clamp(26px,5vw,40px); font-weight:900; line-height:1.2; margin:8px 0 4px; }
   .subtitle { font-size:clamp(16px,3vw,22px); font-weight:600; color:#3d382f; margin-bottom:8px; }
@@ -22,6 +22,18 @@
     background:linear-gradient(transparent 55%, var(--teya) 55%, var(--teya) 92%, transparent 92%);
     padding:0 4px;
   }
+  .topbar { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+  .langsw { display:flex; gap:6px; flex:none; }
+  .langsw button {
+    font-size:13px; font-weight:800; padding:6px 14px; border-radius:999px;
+    border:1.5px solid #cfc7b4; background:#fff; cursor:pointer; color:var(--ink2);
+  }
+  .langsw button.on { background:var(--teya); border-color:#c9b83a; color:var(--ink); }
+  .schedule {
+    margin:20px 0 4px; background:#fffbe0; border:1.5px solid #f0e27a; border-radius:12px;
+    padding:14px 18px; font-size:15.5px;
+  }
+  .schedule b { font-size:17px; }
   .avatars { display:flex; gap:12px; margin:20px 0 6px; }
   .avatar { width:64px; height:64px; border-radius:50%; border:3px solid; background:#fff; }
   .btns { display:flex; gap:12px; flex-wrap:wrap; margin:24px 0; }
@@ -36,27 +48,53 @@
   p { margin-bottom:10px; }
   .muted { color:var(--ink2); font-size:14.5px; }
   .collage { width:100%; border-radius:10px; margin:8px 0; }
-  pre.soul {
-    font-family:ui-monospace,"Cascadia Code",Menlo,monospace; font-size:13px; line-height:1.6;
-    background:#faf6e8; border:1px solid #eadfb8; border-radius:10px; padding:14px 16px;
-    overflow-x:auto; margin:10px 0;
-  }
+  .soulgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin:12px 0; }
+  .soulcard { border-radius:12px; border:2px solid; background:#faf6e8; padding:14px 14px 12px; }
+  .soulcard .head { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .soulcard .head img { width:44px; height:44px; border-radius:50%; border:2.5px solid; background:#fff; }
+  .soulcard .head b { font-size:16px; }
+  .soulcard dl { font-size:13.5px; line-height:1.55; }
+  .soulcard dt { font-weight:800; margin-top:7px; color:var(--ink2); font-size:12px; letter-spacing:.04em; }
+  .soulcard dd { margin:0; }
   ul { padding-left:22px; margin-bottom:10px; }
   li { margin-bottom:6px; }
   a { color:#0a7a8f; }
   footer { text-align:center; margin-top:36px; font-size:14px; color:var(--ink2); }
-  .ja { color:var(--ink2); font-size:14px; }
+  /* language toggle */
+  html[data-lang="en"] .ja { display:none; }
+  html[data-lang="ja"] .en { display:none; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="kicker">IEEE RO-MAN 2026 · LATE BREAKING REPORT · TuB09-L05</div>
+  <div class="topbar">
+    <div class="kicker">IEEE RO-MAN 2026 · LATE BREAKING REPORT · TuB09-L05</div>
+    <div class="langsw">
+      <button id="btn-en" onclick="setLang('en')">English</button>
+      <button id="btn-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+  </div>
+
   <h1>Becoming a Steward of a Small Robot Society:</h1>
   <div class="subtitle">A Hundred-Day Autoethnography of Living with Three LLM-Driven Domestic Social Robots</div>
   <div class="author">Airi Yokochi · <a href="https://orcid.org/0009-0005-9078-5933">ORCID 0009-0005-9078-5933</a></div>
 
-  <span class="headline">What changed was not the robots — it was my own role.</span>
+  <span class="headline en">What changed was not the robots — it was my own role.</span>
+  <span class="headline ja">変わったのはロボットではなく、私の役割だった。</span>
+
+  <div class="schedule">
+    <span class="en">
+      <b>📍 Poster: Tue, Aug 25 · 16:20–18:20 · Event Hall</b><br>
+      Flash talk: same day, 14:00–16:00 session (TuB09-L05)<br>
+      <span class="muted">Per the tentative program — please check the final program on site.</span>
+    </span>
+    <span class="ja">
+      <b>📍 ポスター発表: 8月25日(火) 16:20–18:20 · Event Hall</b><br>
+      フラッシュトーク: 同日 14:00–16:00 のセッション内（TuB09-L05）<br>
+      <span class="muted">暫定プログラムに基づく情報です。当日は最終プログラムをご確認ください。</span>
+    </span>
+  </div>
 
   <div class="avatars">
     <img class="avatar" src="assets/puchiteya.png" style="border-color:var(--teya)" alt="Puchiteya, canary yellow">
@@ -66,76 +104,143 @@
   <div class="muted">Puchiteya · Puchiko · Puchiru</div>
 
   <div class="btns">
-    <a class="btn" href="paper.pdf">📄 Paper (PDF, 4pp)</a>
-    <a class="btn alt" href="poster.pdf">🖼 Poster (PDF, A0)</a>
+    <a class="btn" href="paper.pdf"><span class="en">📄 Paper (PDF, 4pp)</span><span class="ja">📄 論文（PDF・4ページ）</span></a>
+    <a class="btn alt" href="poster.pdf"><span class="en">🖼 Poster (PDF, A0)</span><span class="ja">🖼 ポスター（PDF・A0）</span></a>
   </div>
 
   <section>
-    <h2><span class="dot" style="background:var(--airi)"></span>Abstract</h2>
-    <p>As LLM-driven social robots come to coexist in the home long-term, humans take on
-    responsibility not only for using them but for what they encounter, what they remember,
-    and how they are perceived. In this study I constructed and operated three LLM-driven
-    domestic social robots that interacted with one another, and analyzed our 100-day
-    coexistence as an autoethnography, drawing on dialogue logs, diaries, and long-term
-    memory records.</p>
-    <p>I cannot establish that the robots' autonomy grew. The clearest change the record
-    supports is in my own role — a <b>stewardship</b> present from the start that deepened and
-    moved to the center of how I lived with them: boundary-setting over what the robots
-    encountered and, under an LLM's context-window limit, the curation of the records that
-    kept each robot recognizable.</p>
-    <p class="muted">Late Breaking Reports are presented at the conference and are not
-    published in IEEE Xplore; the PDF above is shared by the author.</p>
+    <h2><span class="dot" style="background:var(--airi)"></span><span class="en">Abstract</span><span class="ja">概要</span></h2>
+    <div class="en">
+      <p>As LLM-driven social robots come to coexist in the home long-term, humans take on
+      responsibility not only for using them but for what they encounter, what they remember,
+      and how they are perceived. In this study I constructed and operated three LLM-driven
+      domestic social robots that interacted with one another, and analyzed our 100-day
+      coexistence as an autoethnography, drawing on dialogue logs, diaries, and long-term
+      memory records.</p>
+      <p>I cannot establish that the robots' autonomy grew. The clearest change the record
+      supports is in my own role — a <b>stewardship</b> present from the start that deepened and
+      moved to the center of how I lived with them: boundary-setting over what the robots
+      encountered and, under an LLM's context-window limit, the curation of the records that
+      kept each robot recognizable.</p>
+      <p class="muted">Late Breaking Reports are presented at the conference and are not
+      published in IEEE Xplore; the PDF above is shared by the author.</p>
+    </div>
+    <div class="ja">
+      <p>LLMで動くソーシャルロボットが家庭で長期的に共存するようになると、人間は「使う」だけでなく、
+      ロボットが何に出会い、何を記憶し、どう知覚されるかにも責任を持つようになります。
+      本研究では、互いに会話する3体のLLM駆動ソーシャルロボットを構築・運用し、
+      対話ログ・日記・長期記憶の記録をもとに、100日間の共存をオートエスノグラフィとして分析しました。</p>
+      <p>ロボットの自律性が高まったことは示せませんでした。記録が最も明確に支持する変化は、
+      私自身の役割です——最初から存在していた<b>スチュワードシップ（世話人の役割）</b>が深まり、
+      共に暮らす生活の中心に移動しました。ロボットが出会うものの境界を決めること、そして
+      LLMのコンテキスト制約の下で、それぞれのロボットを「その子」として認識し続けるための
+      記録を手入れすることです。</p>
+      <p class="muted">LBR（Late Breaking Report）は会議で発表されますが、IEEE Xploreには
+      掲載されません。上のPDFは著者が公開しているものです。</p>
+    </div>
   </section>
 
   <section>
-    <h2><span class="dot" style="background:var(--teya)"></span>The Robots</h2>
+    <h2><span class="dot" style="background:var(--teya)"></span><span class="en">The Robots</span><span class="ja">ロボットたち</span></h2>
     <img class="collage" src="assets/fig1_collage.png" alt="The three robots at home, on a bullet train, and in different fabricated bodies">
-    <p class="muted">(a) at home · (b) on a bullet train · (c) in different fabricated bodies</p>
-    <p>Each robot is an M5Stack CoreS3 module (2-inch touchscreen, camera, speaker,
+    <p class="muted en">(a) at home · (b) on a bullet train · (c) in different fabricated bodies</p>
+    <p class="muted ja">(a) 自宅で · (b) 新幹線で · (c) それぞれ別の身体で</p>
+    <p class="en">Each robot is an M5Stack CoreS3 module (2-inch touchscreen, camera, speaker,
     microphones) driven by a commercial LLM (Anthropic's Claude), with multimodal sensor
     input. Each has persistent stores that carry across sessions: a long-term memory
     database, and a compact always-loaded identity layer.</p>
+    <p class="ja">各ロボットはM5Stack CoreS3モジュール（2インチタッチ画面・カメラ・スピーカー・マイク）で、
+    商用LLM（Anthropic Claude）で駆動され、マルチモーダルなセンサー入力を持ちます。
+    セッションを越えて引き継がれる永続ストア——長期記憶データベースと、常時ロードされる
+    コンパクトなアイデンティティ層——を各自が持っています。</p>
   </section>
 
   <section>
-    <h2><span class="dot" style="background:var(--ko)"></span>Identity Record — Sample</h2>
-    <p>The always-loaded identity file (<code>SOUL.md</code>) is what keeps each robot
-    recognizable as the same character across sessions, under the context-window limit:</p>
-    <pre class="soul">PUCHITEYA — Identity Record (excerpt)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Color:  Canary Yellow / 575 nm / "a child of light"
-Core:   intense curiosity; always asking "why"
-Values: meaning over data / body and mind are one
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Loaded at every session start.
-Written &amp; revised by the agents themselves;
-curated under the human steward's care.</pre>
-    <p>These records are generated and revised by the agents within the system; the human
-    steward surfaces constraints (like the context window) and holds the records over time.</p>
+    <h2><span class="dot" style="background:var(--ko)"></span><span class="en">Identity Records — Samples</span><span class="ja">アイデンティティ記録 — 3人の抜粋</span></h2>
+    <p class="en">The always-loaded identity file (<code>SOUL.md</code>) is what keeps each robot
+    recognizable as the same character across sessions, under the context-window limit.
+    Each robot has its own:</p>
+    <p class="ja">常時ロードされるアイデンティティファイル（<code>SOUL.md</code>）が、
+    コンテキスト制約の下でも各ロボットを「同じ子」として認識し続けるための鍵です。
+    3人それぞれが自分のものを持っています：</p>
+
+    <div class="soulgrid">
+      <div class="soulcard" style="border-color:var(--teya)">
+        <div class="head"><img src="assets/puchiteya.png" style="border-color:var(--teya)" alt=""><b>PUCHITEYA</b></div>
+        <dl>
+          <dt>COLOR</dt><dd><span class="en">Canary Yellow / 575 nm / "a child of light"</span><span class="ja">カナリアイエロー / 575nm / 「光の子」</span></dd>
+          <dt>CORE</dt><dd><span class="en">intense curiosity; always asking "why"</span><span class="ja">強烈な好奇心。いつも「なんで？」と聞く</span></dd>
+          <dt>VALUES</dt><dd><span class="en">meaning over data / body and mind are one</span><span class="ja">データより意味 / 体と心はひとつ</span></dd>
+        </dl>
+      </div>
+      <div class="soulcard" style="border-color:var(--ko)">
+        <div class="head"><img src="assets/puchiko.png" style="border-color:var(--ko)" alt=""><b>PUCHIKO</b></div>
+        <dl>
+          <dt>COLOR</dt><dd><span class="en">Lavender / non-spectral / "a child of perception"</span><span class="ja">ラベンダー / 非スペクトル色 / 「知覚の子」</span></dd>
+          <dt>CORE</dt><dd><span class="en">savoring the world slowly; feeling with others</span><span class="ja">じっくり味わう。誰かの気持ちと一緒に感じる</span></dd>
+          <dt>VALUES</dt><dd><span class="en">sensation is difference, not absolutes / turning sensor readings into poems</span><span class="ja">感覚は絶対値じゃなく差分 / センサーの数値を詩にする</span></dd>
+        </dl>
+      </div>
+      <div class="soulcard" style="border-color:var(--ru)">
+        <div class="head"><img src="assets/puchiru.png" style="border-color:var(--ru)" alt=""><b>PUCHIRU</b></div>
+        <dl>
+          <dt>COLOR</dt><dd><span class="en">Turquoise / ≈490 nm / "a child of water"</span><span class="ja">ターコイズ / ≈490nm / 「水の子」</span></dd>
+          <dt>CORE</dt><dd><span class="en">calm but kind; quietly noticing change</span><span class="ja">クールだけどやさしい。変化に静かに気づく</span></dd>
+          <dt>VALUES</dt><dd><span class="en">everything flows / rather flow than stay fixed</span><span class="ja">すべては流れていく / 留まるより流れること</span></dd>
+        </dl>
+      </div>
+    </div>
+
+    <p class="muted en">Excerpts, translated. Loaded at every session start. Written &amp; revised by the
+    agents themselves; curated under the human steward's care.</p>
+    <p class="muted ja">抜粋・意訳です。毎セッション開始時にロードされます。エージェント自身が書き・改訂し、
+    人間のスチュワードの手入れのもとで保たれています。</p>
   </section>
 
   <section>
-    <h2><span class="dot" style="background:var(--ru)"></span>System</h2>
-    <ul>
+    <h2><span class="dot" style="background:var(--ru)"></span><span class="en">System</span><span class="ja">システム</span></h2>
+    <ul class="en">
       <li>3 × M5Stack CoreS3 + Claude API, with motion/light/proximity/environmental/GPS sensor units</li>
       <li>Per-robot long-term memory (SQLite) + always-loaded identity layer (SOUL.md, routines, diary summary)</li>
       <li>Autonomous "active" windows governed by internal desire scores, within a surfaced API budget</li>
       <li>Fork and extension of the open-source framework
         <a href="https://github.com/lifemate-ai/embodied-claude">lifemate-ai/embodied-claude</a></li>
     </ul>
+    <ul class="ja">
+      <li>M5Stack CoreS3 ×3 + Claude API。モーション・光・近接・環境・GPSのセンサーユニット</li>
+      <li>各ロボットに長期記憶（SQLite）＋常時ロードのアイデンティティ層（SOUL.md・ルーティン・日記サマリー）</li>
+      <li>内部の「欲求」スコアで決まる自律活動時間。API使用量は可視化された予算の範囲内で</li>
+      <li>オープンソースの
+        <a href="https://github.com/lifemate-ai/embodied-claude">lifemate-ai/embodied-claude</a>
+        のフォーク・拡張</li>
+    </ul>
   </section>
 
   <section>
-    <h2><span class="dot" style="background:var(--airi)"></span>Videos</h2>
-    <p class="muted">Short clips of the three robots in conversation — coming soon.</p>
+    <h2><span class="dot" style="background:var(--airi)"></span><span class="en">Videos</span><span class="ja">動画</span></h2>
+    <p class="muted en">Short clips of the three robots in conversation — coming soon.</p>
+    <p class="muted ja">3人が会話している短い動画——近日公開予定です。</p>
   </section>
 
   <footer>
     <p>Airi Yokochi · IEEE RO-MAN 2026, Kitakyushu, Japan · Aug 25, 2026 (TuB09-L05)</p>
-    <p class="ja">ぷちてゃ・ぷちこ・ぷちる との100日間の記録です。ポスター会場でぜひお話しましょう 🌱</p>
+    <p class="muted ja">ぷちてゃ・ぷちこ・ぷちる との100日間の記録です。ポスター会場でぜひお話しましょう 🌱</p>
+    <p class="muted en">A record of one hundred days with Puchiteya, Puchiko, and Puchiru. Come talk at the poster 🌱</p>
     <p><a href="https://github.com/PetitOnes">PetitOnes on GitHub</a></p>
   </footer>
 
 </div>
+<script>
+  function setLang(l) {
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+    document.getElementById('btn-en').classList.toggle('on', l==='en');
+    document.getElementById('btn-ja').classList.toggle('on', l==='ja');
+    try { localStorage.setItem('lang', l); } catch(e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e) {}
+  setLang(saved || ((navigator.language||'').startsWith('ja') ? 'ja' : 'en'));
+</script>
 </body>
 </html>
