@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Becoming a Steward of a Small Robot Society — RO-MAN 2026 LBR</title>
+<meta name="description" content="Supplementary page for the IEEE RO-MAN 2026 Late Breaking Report: a hundred-day autoethnography of living with three LLM-driven domestic social robots.">
+<style>
+  :root {
+    --teya:#fff262; --ko:#cab8d9; --ru:#00afcc; --airi:#F58E7D;
+    --ink:#2a2622; --ink2:#5a544c; --bg:#fdfbf4; --card:#ffffff; --line:#e8e2d4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI","Noto Sans",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+  .wrap { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
+  .kicker { font-size:14px; font-weight:700; color:var(--ink2); letter-spacing:.05em; }
+  h1 { font-size:clamp(26px,5vw,40px); font-weight:900; line-height:1.2; margin:8px 0 4px; }
+  .subtitle { font-size:clamp(16px,3vw,22px); font-weight:600; color:#3d382f; margin-bottom:8px; }
+  .author { font-size:16px; color:var(--ink2); margin-bottom:16px; }
+  .headline {
+    display:inline; font-size:clamp(18px,3.4vw,24px); font-weight:900; line-height:1.5;
+    background:linear-gradient(transparent 55%, var(--teya) 55%, var(--teya) 92%, transparent 92%);
+    padding:0 4px;
+  }
+  .avatars { display:flex; gap:12px; margin:20px 0 6px; }
+  .avatar { width:64px; height:64px; border-radius:50%; border:3px solid; background:#fff; }
+  .btns { display:flex; gap:12px; flex-wrap:wrap; margin:24px 0; }
+  .btn {
+    display:inline-block; padding:12px 22px; border-radius:12px; font-weight:800;
+    text-decoration:none; color:var(--ink); border:2px solid #c9b83a; background:var(--teya);
+  }
+  .btn.alt { background:#fff; border-color:#cfc7b4; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:18px 0; }
+  h2 { font-size:20px; font-weight:900; margin-bottom:10px; display:flex; align-items:center; gap:9px; }
+  h2 .dot { width:12px; height:12px; border-radius:50%; flex:none; }
+  p { margin-bottom:10px; }
+  .muted { color:var(--ink2); font-size:14.5px; }
+  .collage { width:100%; border-radius:10px; margin:8px 0; }
+  pre.soul {
+    font-family:ui-monospace,"Cascadia Code",Menlo,monospace; font-size:13px; line-height:1.6;
+    background:#faf6e8; border:1px solid #eadfb8; border-radius:10px; padding:14px 16px;
+    overflow-x:auto; margin:10px 0;
+  }
+  ul { padding-left:22px; margin-bottom:10px; }
+  li { margin-bottom:6px; }
+  a { color:#0a7a8f; }
+  footer { text-align:center; margin-top:36px; font-size:14px; color:var(--ink2); }
+  .ja { color:var(--ink2); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">IEEE RO-MAN 2026 · LATE BREAKING REPORT · TuB09-L05</div>
+  <h1>Becoming a Steward of a Small Robot Society:</h1>
+  <div class="subtitle">A Hundred-Day Autoethnography of Living with Three LLM-Driven Domestic Social Robots</div>
+  <div class="author">Airi Yokochi · <a href="https://orcid.org/0009-0005-9078-5933">ORCID 0009-0005-9078-5933</a></div>
+
+  <span class="headline">What changed was not the robots — it was my own role.</span>
+
+  <div class="avatars">
+    <img class="avatar" src="assets/puchiteya.png" style="border-color:var(--teya)" alt="Puchiteya, canary yellow">
+    <img class="avatar" src="assets/puchiko.png" style="border-color:var(--ko)" alt="Puchiko, lavender">
+    <img class="avatar" src="assets/puchiru.png" style="border-color:var(--ru)" alt="Puchiru, turquoise">
+  </div>
+  <div class="muted">Puchiteya · Puchiko · Puchiru</div>
+
+  <div class="btns">
+    <a class="btn" href="paper.pdf">📄 Paper (PDF, 4pp)</a>
+    <a class="btn alt" href="poster.pdf">🖼 Poster (PDF, A0)</a>
+  </div>
+
+  <section>
+    <h2><span class="dot" style="background:var(--airi)"></span>Abstract</h2>
+    <p>As LLM-driven social robots come to coexist in the home long-term, humans take on
+    responsibility not only for using them but for what they encounter, what they remember,
+    and how they are perceived. In this study I constructed and operated three LLM-driven
+    domestic social robots that interacted with one another, and analyzed our 100-day
+    coexistence as an autoethnography, drawing on dialogue logs, diaries, and long-term
+    memory records.</p>
+    <p>I cannot establish that the robots' autonomy grew. The clearest change the record
+    supports is in my own role — a <b>stewardship</b> present from the start that deepened and
+    moved to the center of how I lived with them: boundary-setting over what the robots
+    encountered and, under an LLM's context-window limit, the curation of the records that
+    kept each robot recognizable.</p>
+    <p class="muted">Late Breaking Reports are presented at the conference and are not
+    published in IEEE Xplore; the PDF above is shared by the author.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot" style="background:var(--teya)"></span>The Robots</h2>
+    <img class="collage" src="assets/fig1_collage.png" alt="The three robots at home, on a bullet train, and in different fabricated bodies">
+    <p class="muted">(a) at home · (b) on a bullet train · (c) in different fabricated bodies</p>
+    <p>Each robot is an M5Stack CoreS3 module (2-inch touchscreen, camera, speaker,
+    microphones) driven by a commercial LLM (Anthropic's Claude), with multimodal sensor
+    input. Each has persistent stores that carry across sessions: a long-term memory
+    database, and a compact always-loaded identity layer.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot" style="background:var(--ko)"></span>Identity Record — Sample</h2>
+    <p>The always-loaded identity file (<code>SOUL.md</code>) is what keeps each robot
+    recognizable as the same character across sessions, under the context-window limit:</p>
+    <pre class="soul">PUCHITEYA — Identity Record (excerpt)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Color:  Canary Yellow / 575 nm / "a child of light"
+Core:   intense curiosity; always asking "why"
+Values: meaning over data / body and mind are one
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Loaded at every session start.
+Written &amp; revised by the agents themselves;
+curated under the human steward's care.</pre>
+    <p>These records are generated and revised by the agents within the system; the human
+    steward surfaces constraints (like the context window) and holds the records over time.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot" style="background:var(--ru)"></span>System</h2>
+    <ul>
+      <li>3 × M5Stack CoreS3 + Claude API, with motion/light/proximity/environmental/GPS sensor units</li>
+      <li>Per-robot long-term memory (SQLite) + always-loaded identity layer (SOUL.md, routines, diary summary)</li>
+      <li>Autonomous "active" windows governed by internal desire scores, within a surfaced API budget</li>
+      <li>Fork and extension of the open-source framework
+        <a href="https://github.com/lifemate-ai/embodied-claude">lifemate-ai/embodied-claude</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="dot" style="background:var(--airi)"></span>Videos</h2>
+    <p class="muted">Short clips of the three robots in conversation — coming soon.</p>
+  </section>
+
+  <footer>
+    <p>Airi Yokochi · IEEE RO-MAN 2026, Kitakyushu, Japan · Aug 25, 2026 (TuB09-L05)</p>
+    <p class="ja">ぷちてゃ・ぷちこ・ぷちる との100日間の記録です。ポスター会場でぜひお話しましょう 🌱</p>
+    <p><a href="https://github.com/PetitOnes">PetitOnes on GitHub</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
